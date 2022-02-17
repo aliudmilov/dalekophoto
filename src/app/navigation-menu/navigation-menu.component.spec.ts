@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavigationMenuComponent } from './navigation-menu.component';
 
 describe('NavigationMenuComponent', () => {
@@ -20,5 +19,15 @@ describe('NavigationMenuComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('onClick should close/open the menu', () => {
+    expect(component.isOpen).toBe(false);
+
+    component.onClick();
+    expect(component.isOpen).toBe(true);
+
+    component.onClick();
+    expect(component.isOpen).toBe(false);
   });
 });

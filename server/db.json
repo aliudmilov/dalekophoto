@@ -1,0 +1,28 @@
+{
+  "portfolio": {
+    "photos": [
+      {
+        "id": "1",
+        "name": "",
+        "url": "./France/Eze/1.jpg"
+      }
+    ]
+  },
+  "gallery": [
+    {
+      "name": "France",
+      "galleries": [
+        {
+          "name": "Eze",
+          "photos": [
+            {
+              "id": "1",
+              "name": "",
+              "url": "./France/Eze/1.jpg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

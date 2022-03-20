@@ -6,11 +6,11 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'contact-us', component: ContactUsComponent }
 ];
 
 @NgModule({

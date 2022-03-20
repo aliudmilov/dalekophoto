@@ -15,7 +15,16 @@ import { AlbumComponent } from './album/album.component';
 import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationMenuComponent, HomeComponent, GalleryComponent, AboutComponent, ContactUsComponent, AlbumComponent, PhotoComponent],
+  declarations: [
+    AppComponent,
+    NavigationMenuComponent,
+    HomeComponent,
+    GalleryComponent,
+    AboutComponent,
+    ContactUsComponent,
+    AlbumComponent,
+    PhotoComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

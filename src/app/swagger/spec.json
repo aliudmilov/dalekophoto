@@ -7,9 +7,7 @@
   "paths": {
     "/api/v1/albums": {
       "get": {
-        "tags": [
-          "Albums"
-        ],
+        "tags": ["Albums"],
         "operationId": "GetAlbums",
         "responses": {
           "200": {
@@ -30,9 +28,7 @@
     },
     "/api/v1/albums/{id}": {
       "get": {
-        "tags": [
-          "Albums"
-        ],
+        "tags": ["Albums"],
         "operationId": "GetAlbum",
         "parameters": [
           {
@@ -70,9 +66,7 @@
     },
     "/api/v1/albums/portfolio": {
       "get": {
-        "tags": [
-          "Albums"
-        ],
+        "tags": ["Albums"],
         "operationId": "GetPortfolio",
         "responses": {
           "200": {
@@ -92,9 +86,7 @@
   "components": {
     "schemas": {
       "Album": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "id": {
@@ -137,10 +129,7 @@
         "additionalProperties": false
       },
       "Photo": {
-        "required": [
-          "id",
-          "smallImageUrl"
-        ],
+        "required": ["id", "smallImageUrl"],
         "type": "object",
         "properties": {
           "id": {
@@ -199,7 +188,7 @@
             "nullable": true
           }
         },
-        "additionalProperties": { }
+        "additionalProperties": {}
       }
     }
   }

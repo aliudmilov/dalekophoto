@@ -11,7 +11,7 @@
     "test:ci": "ng test --coverage --runInBand",
     "lint": "ng lint",
     "lint:fix": "npx prettier --write .",
-    "swagger-gen:local": "openapi --input ./src/app/swagger/spec.json --output ./src/app/swagger/generated",
+    "swagger-gen:local": "openapi --input ./src/app/swagger/spec.json --output ./src/app/swagger/generated --exportCore false --exportServices false",
     "json-server": "json-server --watch server/db.json"
   },
   "private": true,

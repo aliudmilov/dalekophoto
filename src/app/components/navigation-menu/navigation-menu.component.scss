@@ -82,6 +82,7 @@ $hamburger-spacing: 8px;
   position: absolute;
   top: calc($ball-size / 2);
   left: calc($ball-size / 2);
+  z-index: 1;
 }
 
 .menu-item {

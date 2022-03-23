@@ -8,17 +8,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AlbumService {
-  constructor(public http: HttpClient) {}
+  constructor(public readonly http: HttpClient) {}
 
-  public getAlbums(): Observable<Album[]> {
+  getAlbums(): Observable<Album[]> {
     return this.http.get<Album[]>(`${environment.baseApiUrl}/api/v1/albums`);
   }
 
-  public getAlbum(id: string): Observable<Album> {
-    return this.http.get<Album>(`${environment.baseApiUrl}/api/v1/albums/${id}`);
+  getAlbum(id: string): Observable<Album> {
+    return this.http.get<Album>(
+      `${environment.baseApiUrl}/api/v1/albums/${id}`
+    );
   }
 
-  public getPortfolio(): Observable<Album> {
-    return this.http.get<Album>(`${environment.baseApiUrl}/api/v1/albums/portfolio`);
+  getPortfolio(): Observable<Album> {
+    return this.http.get<Album>(
+      `${environment.baseApiUrl}/api/v1/albums/portfolio`
+    );
   }
 }

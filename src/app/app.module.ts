@@ -15,6 +15,9 @@ import { AboutComponent } from '@components/about/about.component';
 import { ContactUsComponent } from '@components/contact-us/contact-us.component';
 import { AlbumComponent } from '@components/album/album.component';
 import { PhotoComponent } from '@components/photo/photo.component';
+import { ScrollToTopComponent } from '@components/scroll-to-top/scroll-to-top.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { PhotoComponent } from '@components/photo/photo.component';
     AlbumComponent,
     PhotoComponent,
     HomeComponent,
+    ScrollToTopComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

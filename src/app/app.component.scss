@@ -1,5 +1,9 @@
-@import '../scss/variables';
-
-.logo {
-  font-family: $logo-font-family;
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  height: 100%;
+  width: 100%;
 }

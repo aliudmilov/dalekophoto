@@ -1,0 +1,12 @@
+.button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-visible {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}

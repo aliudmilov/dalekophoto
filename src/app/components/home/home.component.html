@@ -1,9 +1,10 @@
-<ul class="mdc-image-list mdc-image-list--masonry my-masonry-image-list">
-  <li class="mdc-image-list__item" *ngFor="let photo of portfolio?.photos">
-    <img class="mdc-image-list__image" [src]="photo.smallImageUrl">
-    <!-- <div class="mdc-image-list__supporting">
-      <span class="mdc-image-list__label">Text label</span>
-    </div> -->
-  </li>
-</ul>
-<mat-spinner *ngIf="isBusy"></mat-spinner>
+<div class="container">
+  <ul
+    class="content mdc-image-list mdc-image-list--masonry my-masonry-image-list"
+  >
+    <li class="mdc-image-list__item" *ngFor="let photo of portfolio?.photos">
+      <img class="mdc-image-list__image" [src]="photo.smallImageUrl" />
+    </li>
+  </ul>
+  <mat-spinner class="spinner" *ngIf="isBusy"></mat-spinner>
+</div>

@@ -1,10 +1,17 @@
-@import './src/scss/variables';
+@import '../../../scss/variables';
 @import '~compass-mixins/lib/compass/css3';
 
 $color: $theme-ancient-foreground-color;
 $background-color: $theme-ancient-background-color;
-$ball-size: 52px;
+$ball-size: 40px;
 $menu-items: 6;
+$position: fixed;
+$position-left: 16px;
+$position-top: 16px;
+
+$hamburger-width: 18px;
+$hamburger-height: 2px;
+$hamburger-spacing: 5px;
 
 %goo {
   filter: url('#shadowed-goo');
@@ -40,8 +47,8 @@ $menu-items: 6;
 
   top: 50%;
   left: 50%;
-  $width: 25px;
-  $height: 3px;
+  $width: $hamburger-width;
+  $height: $hamburger-height;
   width: $width;
   height: $height;
   margin-left: calc(-1 * $width / 2);
@@ -49,8 +56,6 @@ $menu-items: 6;
 
   transition: transform 200ms;
 }
-
-$hamburger-spacing: 8px;
 
 .hamburger-1 {
   transform: translate3d(0, -$hamburger-spacing, 0);
@@ -79,9 +84,9 @@ $hamburger-spacing: 8px;
 .menu {
   @extend %goo;
 
-  position: absolute;
-  top: calc($ball-size / 2);
-  left: calc($ball-size / 2);
+  position: $position;
+  top: $position-top;
+  left: $position-left;
   z-index: 1;
 }
 

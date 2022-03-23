@@ -13,21 +13,24 @@ export class HomeComponent extends DestroyAwareComponent implements OnInit {
   isBusy = false;
   portfolio?: Album;
 
-  constructor(private albumService: AlbumService) {
+  constructor(public readonly albumService: AlbumService) {
     super();
   }
 
   ngOnInit(): void {
     this.isBusy = true;
-    this.albumService.getPortfolio().pipe(takeUntil(this.destroyed$)).subscribe({
-      next: (result) => {
-        this.isBusy = false;
-        this.portfolio = result;
-      },
-      error: (error) => {
-        this.isBusy = false;
-        throwError(() => error);
-      }
-    });
+    this.albumService
+      .getPortfolio()
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe({
+        next: (result) => {
+          this.isBusy = false;
+          this.portfolio = result;
+        },
+        error: (error) => {
+          this.isBusy = false;
+          throwError(() => error);
+        }
+      });
   }
 }

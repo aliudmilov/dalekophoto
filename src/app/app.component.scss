@@ -7,3 +7,15 @@
   height: 100%;
   width: 100%;
 }
+
+.header {
+  grid-row: 1;
+}
+
+.content {
+  grid-row: 2;
+}
+
+.footer {
+  grid-row: 3;
+}

@@ -1,12 +1,7 @@
 <div class="container">
-  <header>
-    <app-header></app-header>
-  </header>
-  <article>
+  <app-header class="header"></app-header>
+  <div class="content">
     <router-outlet></router-outlet>
-  </article>
-  <footer>
-    <app-footer></app-footer>
-    <app-scroll-to-top></app-scroll-to-top>
-  </footer>
+  </div>
+  <app-scroll-to-top class="footer"></app-scroll-to-top>
 </div>

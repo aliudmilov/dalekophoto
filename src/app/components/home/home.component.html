@@ -3,7 +3,9 @@
     class="content mdc-image-list mdc-image-list--masonry my-masonry-image-list"
   >
     <li class="mdc-image-list__item" *ngFor="let photo of portfolio?.photos">
-      <img class="mdc-image-list__image" [src]="photo.smallImageUrl" />
+      <a [routerLink]="['/album', portfolio?.id]">
+        <img class="mdc-image-list__image" [src]="photo.smallImageUrl" />
+      </a>
     </li>
   </ul>
   <mat-spinner class="spinner" *ngIf="isBusy"></mat-spinner>

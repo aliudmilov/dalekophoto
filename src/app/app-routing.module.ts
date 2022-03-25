@@ -6,12 +6,19 @@ import { ContactUsComponent } from '@components/contact-us/contact-us.component'
 import { GalleryComponent } from '@components/gallery/gallery.component';
 import { HomeComponent } from '@components/home/home.component';
 
+export enum RouteName {
+  Home = 'home',
+  Gallery = 'gallery',
+  About = 'about',
+  ContactUs = 'contact-us',
+  Album = 'album/:id'
+}
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact-us', component: ContactUsComponent },
-  { path: 'album/:id', component: AlbumComponent },
+  { path: RouteName.Home, component: HomeComponent },
+  { path: RouteName.Gallery, component: GalleryComponent },
+  { path: RouteName.About, component: AboutComponent },
+  { path: RouteName.ContactUs, component: ContactUsComponent },
+  { path: RouteName.Album, component: AlbumComponent },
   { path: '**', component: HomeComponent }
 ];
 

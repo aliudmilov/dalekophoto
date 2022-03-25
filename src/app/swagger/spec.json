@@ -124,6 +124,9 @@
               "$ref": "#/components/schemas/Photo"
             },
             "nullable": true
+          },
+          "isPorfolio": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

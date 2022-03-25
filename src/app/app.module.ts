@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationMenuComponent } from '@components/navigation-menu/navigation-menu.component';
@@ -38,7 +38,8 @@ import { HeaderComponent } from '@components/header/header.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

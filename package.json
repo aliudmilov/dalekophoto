@@ -11,7 +11,7 @@
     "test:ci": "ng test --coverage --runInBand",
     "lint": "ng lint",
     "lint:fix": "npx prettier --write .",
-    "swagger-gen:local": "openapi --input ./src/app/swagger/spec.json --output ./src/app/swagger/generated --exportCore false --exportServices false",
+    "swagger:gen": "openapi --input ./src/app/swagger/spec.json --output ./src/app/swagger/generated --exportCore false --exportServices false",
     "json-server": "json-server --watch server/db.json"
   },
   "private": true,
@@ -27,6 +27,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@fortawesome/fontawesome-free": "^6.0.0",
+    "@kolkov/ngx-gallery": "^2.0.1",
     "@material/image-list": "^13.0.0",
     "compass-mixins": "^0.12.11",
     "rxjs": "~7.5.5",

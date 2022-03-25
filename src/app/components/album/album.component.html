@@ -1,1 +1,18 @@
-<p>album works!</p>
+<div class="container">
+  <div class="close-button-container">
+    <button
+      class="close-button"
+      mat-icon-button
+      aria-label="Close"
+      (click)="onCloseClicked()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <ngx-gallery
+    class="ngx-gallery content"
+    [options]="galleryOptions"
+    [images]="albumImages"
+  ></ngx-gallery>
+  <mat-spinner class="spinner" *ngIf="isBusy"></mat-spinner>
+</div>

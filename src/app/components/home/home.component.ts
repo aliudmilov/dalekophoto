@@ -10,7 +10,7 @@ import { takeUntil, throwError } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent extends DestroyAwareComponent implements OnInit {
-  isBusy = false;
+  isBusy = true;
   portfolio?: Album;
 
   constructor(public readonly albumService: AlbumService) {

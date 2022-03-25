@@ -1,0 +1,45 @@
+@import '../../../scss/variables';
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  height: 100%;
+
+  .content {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .spinner {
+    grid-row: 2;
+    grid-column: 2;
+    z-index: 9999;
+  }
+
+  .close-button-container {
+    grid-row: 1;
+    grid-column: 3;
+    position: relative;
+  }
+  .close-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 9999;
+  }
+}
+
+::ng-deep .ngx-gallery-icon {
+  font-size: 32px !important;
+  color: $theme-ancient-background-color !important;
+}
+
+::ng-deep .mat-icon {
+  height: 40px !important;
+  width: 40px !important;
+  font-size: 40px !important;
+  color: $theme-ancient-background-color !important;
+}

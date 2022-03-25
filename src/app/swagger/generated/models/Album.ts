@@ -13,4 +13,5 @@ export type Album = {
     dateCreated?: string | null;
     dateUpdated?: string | null;
     photos?: Array<Photo> | null;
+    isPorfolio?: boolean;
 };

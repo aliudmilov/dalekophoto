@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -8,7 +9,11 @@ import { Component, Input } from '@angular/core';
 export class NavigationMenuComponent {
   @Input() isOpen = false;
 
-  constructor() {}
+  constructor(router: Router) {
+    router.events.subscribe((x) => {
+      this.isOpen = false;
+    });
+  }
 
   onClick() {
     this.isOpen = !this.isOpen;

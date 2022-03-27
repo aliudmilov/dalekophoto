@@ -8,7 +8,7 @@
         [routerLink]="['/album', portfolio?.id]"
         [queryParams]="{ photoId: photo?.id }"
       >
-        <img class="mdc-image-list__image" [lazyLoad]="photo.smallImageUrl" />
+        <img class="mdc-image-list__image" [lazyLoad]="photo.mediumImageUrl" />
       </a>
     </li>
   </ul>

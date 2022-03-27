@@ -5,7 +5,8 @@
 export type Photo = {
     id: string;
     smallImageUrl: string;
-    largeImageUrl?: string | null;
+    mediumImageUrl: string;
+    largeImageUrl: string;
     title?: string | null;
     description?: string | null;
     dateTaken?: string | null;

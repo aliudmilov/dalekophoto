@@ -132,7 +132,7 @@
         "additionalProperties": false
       },
       "Photo": {
-        "required": ["id", "smallImageUrl"],
+        "required": ["id", "largeImageUrl", "mediumImageUrl", "smallImageUrl"],
         "type": "object",
         "properties": {
           "id": {
@@ -141,9 +141,11 @@
           "smallImageUrl": {
             "type": "string"
           },
+          "mediumImageUrl": {
+            "type": "string"
+          },
           "largeImageUrl": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "title": {
             "type": "string",

@@ -1,12 +1,12 @@
 @use '@material/image-list';
 
-.my-masonry-image-list {
+.portfolio-image-list {
   @include image-list.masonry-columns(2, 8px);
 }
 
 @media (max-width: 767px) {
-  .my-masonry-image-list {
-    @include image-list.masonry-columns(1, 4px);
+  .portfolio-image-list {
+    @include image-list.masonry-columns(1, 8px);
   }
 }
 
@@ -19,8 +19,8 @@
   .content {
     grid-row-start: 1;
     grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: 2;
+    max-width: 2880px;
   }
 
   .spinner {

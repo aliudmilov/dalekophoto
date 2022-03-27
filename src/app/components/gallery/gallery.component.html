@@ -1,1 +1,33 @@
-<p>gallery works!</p>
+<div class="container">
+  <ul class="content mdc-image-list mdc-image-list--masonry gallery-image-list">
+    <li class="mdc-image-list__item" *ngFor="let album of albums">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ album?.title }}</mat-card-title>
+          <!-- <button *ngIf="album?.location" mat-fab>
+            D
+          </button> -->
+        </mat-card-header>
+        <mat-card-content>
+          <a [routerLink]="['/album', album?.id]">
+            <ul class="mdc-image-list mdc-image-list--masonry album-image-list">
+              <li
+                class="mdc-image-list__item"
+                *ngFor="let photo of album?.photos?.slice(0, 4)"
+              >
+                <img
+                  class="mdc-image-list__image"
+                  [src]="photo.smallImageUrl"
+                />
+              </li>
+            </ul>
+          </a>
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- <button mat-button>...</button> -->
+        </mat-card-actions>
+      </mat-card>
+    </li>
+  </ul>
+  <mat-spinner class="spinner" *ngIf="isBusy"></mat-spinner>
+</div>

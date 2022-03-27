@@ -9,6 +9,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import {
+  LazyLoadImageModule,
+  LAZYLOAD_IMAGE_HOOKS,
+  ScrollHooks
+} from 'ng-lazyload-image';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,9 +50,10 @@ import { HeaderComponent } from '@components/header/header.component';
     MatIconModule,
     MatProgressSpinnerModule,
 
-    NgxGalleryModule
+    NgxGalleryModule,
+    LazyLoadImageModule
   ],
-  providers: [],
+  providers: [{ provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

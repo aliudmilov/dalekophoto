@@ -24,8 +24,8 @@ export class HomeComponent extends DestroyAwareComponent implements OnInit {
       .pipe(takeUntil(this.destroyed$))
       .subscribe({
         next: (result) => {
-          this.isBusy = false;
           this.portfolio = result;
+          this.isBusy = false;
         },
         error: (error) => {
           this.isBusy = false;

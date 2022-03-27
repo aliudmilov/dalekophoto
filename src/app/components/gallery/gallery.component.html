@@ -1,7 +1,10 @@
 <div class="container">
-  <ul class="content mdc-image-list mdc-image-list--masonry gallery-image-list">
+  <ul
+    *ngIf="!isBusy"
+    class="content mdc-image-list mdc-image-list--masonry gallery-image-list"
+  >
     <li class="mdc-image-list__item" *ngFor="let album of albums">
-      <mat-card>
+      <mat-card class="mat-elevation-z8">
         <mat-card-header>
           <mat-card-title>{{ album?.title }}</mat-card-title>
           <!-- <button *ngIf="album?.location" mat-fab>
@@ -9,23 +12,31 @@
           </button> -->
         </mat-card-header>
         <mat-card-content>
-          <a [routerLink]="['/album', album?.id]">
-            <ul class="mdc-image-list mdc-image-list--masonry album-image-list">
-              <li
-                class="mdc-image-list__item"
-                *ngFor="let photo of album?.photos?.slice(0, 4)"
+          <ul class="mdc-image-list mdc-image-list--masonry album-image-list">
+            <li
+              class="mdc-image-list__item"
+              *ngFor="let photo of album?.photos?.slice(0, 4)"
+            >
+              <a
+                [routerLink]="['/album', album?.id]"
+                [queryParams]="{ photoId: photo?.id }"
               >
                 <img
                   class="mdc-image-list__image"
-                  [src]="photo.smallImageUrl"
+                  [lazyLoad]="photo.smallImageUrl"
                 />
-              </li>
-            </ul>
-          </a>
+              </a>
+            </li>
+          </ul>
         </mat-card-content>
-        <mat-card-actions>
-          <!-- <button mat-button>...</button> -->
-        </mat-card-actions>
+        <mat-card-footer class="footer">
+          <mat-card-subtitle *ngIf="album?.photos?.length">
+            {{ album?.photos?.length }} photos
+          </mat-card-subtitle>
+        </mat-card-footer>
+        <!-- <mat-card-actions>
+          <button mat-button>...</button>
+        </mat-card-actions> -->
       </mat-card>
     </li>
   </ul>

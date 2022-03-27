@@ -13,6 +13,7 @@
     class="ngx-gallery content"
     [options]="galleryOptions"
     [images]="albumImages"
+    (change)="onChange($event)"
   ></ngx-gallery>
   <mat-spinner class="spinner" *ngIf="isBusy"></mat-spinner>
 </div>

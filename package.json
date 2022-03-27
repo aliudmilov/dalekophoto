@@ -30,6 +30,7 @@
     "@kolkov/ngx-gallery": "^2.0.1",
     "@material/image-list": "^13.0.0",
     "compass-mixins": "^0.12.11",
+    "ng-lazyload-image": "^9.1.2",
     "rxjs": "~7.5.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.5"

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { takeUntil, throwError } from 'rxjs';
 import {
+  NgxGalleryComponent,
   NgxGalleryOptions,
   NgxGalleryImage,
   NgxGalleryAnimation,
@@ -18,6 +19,8 @@ import { RouteName } from 'src/app/app-routing.module';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent extends DestroyAwareComponent implements OnInit {
+  @ViewChild(NgxGalleryComponent) gallery!: NgxGalleryComponent;
+
   defaultOption: NgxGalleryOptions = {
     thumbnails: false,
     preview: false,
@@ -69,26 +72,60 @@ export class AlbumComponent extends DestroyAwareComponent implements OnInit {
       .pipe(takeUntil(this.destroyed$))
       .subscribe({
         next: (result) => {
+          this.initAlbum(result);
           this.isBusy = false;
-          this.album = result;
-          if (!this.album?.photos) {
-            this.router.navigate([RouteName.Home]);
-            return;
-          }
-          this.albumImages = result.photos!.map(
-            (x) =>
-              <NgxGalleryImage>{
-                small: x.smallImageUrl,
-                medium: x.largeImageUrl,
-                big: x.largeImageUrl
-              }
-          );
         },
         error: (error) => {
           this.isBusy = false;
           throwError(() => error);
         }
       });
+  }
+
+  initAlbum(result: Album): void {
+    this.album = result;
+    if (!this.album?.photos) {
+      this.router.navigate([RouteName.Home]);
+      return;
+    }
+
+    this.albumImages = result.photos!.map(
+      (x) =>
+        <NgxGalleryImage>{
+          label: x.id,
+          small: x.smallImageUrl,
+          medium: x.largeImageUrl,
+          big: x.largeImageUrl
+        }
+    );
+
+    const routeParams = this.route.snapshot.queryParamMap;
+    const photoIdRouteParam = routeParams.get('photoId');
+    if (!photoIdRouteParam) {
+      return;
+    }
+
+    const imageIndex = this.albumImages.findIndex(
+      (x) => x.label === photoIdRouteParam
+    );
+    if (imageIndex < 0) {
+      return;
+    }
+
+    this.gallery.show(imageIndex);
+  }
+
+  onChange(event: any): void {
+    const image = this.albumImages[event.index];
+    if (!image) {
+      return;
+    }
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { photoId: image.label },
+      queryParamsHandling: 'merge'
+    });
   }
 
   onCloseClicked(): void {

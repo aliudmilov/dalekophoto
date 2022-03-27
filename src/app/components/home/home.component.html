@@ -1,10 +1,14 @@
 <div class="container">
   <ul
+    *ngIf="!isBusy"
     class="content mdc-image-list mdc-image-list--masonry portfolio-image-list"
   >
     <li class="mdc-image-list__item" *ngFor="let photo of portfolio?.photos">
-      <a [routerLink]="['/album', portfolio?.id]">
-        <img class="mdc-image-list__image" [src]="photo.smallImageUrl" />
+      <a
+        [routerLink]="['/album', portfolio?.id]"
+        [queryParams]="{ photoId: photo?.id }"
+      >
+        <img class="mdc-image-list__image" [lazyLoad]="photo.smallImageUrl" />
       </a>
     </li>
   </ul>

@@ -132,7 +132,15 @@
         "additionalProperties": false
       },
       "Photo": {
-        "required": ["id", "largeImageUrl", "mediumImageUrl", "smallImageUrl"],
+        "required": [
+          "id",
+          "largeImageDefaultUrl",
+          "largeImageUrl",
+          "mediumImageDefaultUrl",
+          "mediumImageUrl",
+          "smallImageDefaultUrl",
+          "smallImageUrl"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -141,10 +149,19 @@
           "smallImageUrl": {
             "type": "string"
           },
+          "smallImageDefaultUrl": {
+            "type": "string"
+          },
           "mediumImageUrl": {
             "type": "string"
           },
+          "mediumImageDefaultUrl": {
+            "type": "string"
+          },
           "largeImageUrl": {
+            "type": "string"
+          },
+          "largeImageDefaultUrl": {
             "type": "string"
           },
           "title": {

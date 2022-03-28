@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavigationMenuComponent } from '@components/navigation-menu/navigation-menu.component';
 import { AppComponent } from './app.component';
-import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

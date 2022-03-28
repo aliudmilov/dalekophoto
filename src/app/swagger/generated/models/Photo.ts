@@ -5,8 +5,11 @@
 export type Photo = {
     id: string;
     smallImageUrl: string;
+    smallImageDefaultUrl: string;
     mediumImageUrl: string;
+    mediumImageDefaultUrl: string;
     largeImageUrl: string;
+    largeImageDefaultUrl: string;
     title?: string | null;
     description?: string | null;
     dateTaken?: string | null;

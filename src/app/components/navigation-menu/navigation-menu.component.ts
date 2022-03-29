@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavigationMenuComponent {
   @Input() isOpen = false;
 
-  constructor(router: Router) {
+  constructor(public readonly router: Router) {
     router.events.subscribe((x) => {
       this.isOpen = false;
     });

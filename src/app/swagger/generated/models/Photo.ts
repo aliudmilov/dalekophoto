@@ -10,6 +10,7 @@ export type Photo = {
     mediumImageDefaultUrl: string;
     largeImageUrl: string;
     largeImageDefaultUrl: string;
+    isFeatured: boolean;
     title?: string | null;
     description?: string | null;
     dateTaken?: string | null;

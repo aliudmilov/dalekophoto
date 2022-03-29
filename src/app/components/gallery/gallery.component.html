@@ -15,26 +15,33 @@
           <ul class="mdc-image-list mdc-image-list--masonry album-image-list">
             <li
               class="mdc-image-list__item"
-              *ngFor="let photo of album?.photos?.slice(0, 4)"
+              *ngFor="let photo of getFeaturedPhotos(album); last as isLast"
             >
               <a
+                class="photo-container"
                 [routerLink]="['/album', album?.id]"
                 [queryParams]="{ photoId: photo?.id }"
               >
                 <img
-                  class="mdc-image-list__image"
+                  class="mdc-image-list__image photo"
                   [lazyLoad]="photo.smallImageUrl"
                   [defaultImage]="photo.smallImageDefaultUrl"
                 />
+                <div
+                  class="last-photo"
+                  *ngIf="isLast && getMorePhotosLabel(album)"
+                >
+                  <p class="last-photo-text">{{ getMorePhotosLabel(album) }}</p>
+                </div>
               </a>
             </li>
           </ul>
         </mat-card-content>
-        <mat-card-footer class="footer">
+        <!-- <mat-card-footer class="footer">
           <mat-card-subtitle *ngIf="album?.photos?.length">
             {{ album?.photos?.length }} photos
           </mat-card-subtitle>
-        </mat-card-footer>
+        </mat-card-footer> -->
         <!-- <mat-card-actions>
           <button mat-button>...</button>
         </mat-card-actions> -->

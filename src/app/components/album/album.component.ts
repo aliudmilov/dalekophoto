@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntil, throwError } from 'rxjs';
 import {
   NgxGalleryComponent,
@@ -31,6 +31,7 @@ export class AlbumComponent extends DestroyAwareComponent implements OnInit {
     imageAnimation: NgxGalleryAnimation.Slide,
     imageSize: NgxGalleryImageSize.Contain,
     imageSwipe: true,
+    imageInfinityMove: true,
     arrowPrevIcon: 'fa-solid fa-chevron-left',
     arrowNextIcon: 'fa-solid fa-chevron-right'
   };

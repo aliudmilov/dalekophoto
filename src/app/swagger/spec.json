@@ -134,6 +134,7 @@
       "Photo": {
         "required": [
           "id",
+          "isFeatured",
           "largeImageDefaultUrl",
           "largeImageUrl",
           "mediumImageDefaultUrl",
@@ -163,6 +164,9 @@
           },
           "largeImageDefaultUrl": {
             "type": "string"
+          },
+          "isFeatured": {
+            "type": "boolean"
           },
           "title": {
             "type": "string",

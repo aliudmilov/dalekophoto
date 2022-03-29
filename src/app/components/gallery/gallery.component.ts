@@ -26,7 +26,7 @@ export class GalleryComponent extends DestroyAwareComponent implements OnInit {
       .pipe(takeUntil(this.destroyed$))
       .subscribe({
         next: (result) => {
-          this.albums = result;
+          this.albums = result.filter((x) => !x.isPorfolio);
           this.initPhotoMap();
           this.isBusy = false;
         },

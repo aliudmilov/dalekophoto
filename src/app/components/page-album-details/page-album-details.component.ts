@@ -133,10 +133,10 @@ export class PageAlbumDetailsComponent
   }
 
   onCloseClicked(): void {
-    if (this.album?.isPorfolio) {
+    if (!this.album || this.album.isPorfolio) {
       this.router.navigate([RouteName.Home]);
     } else {
-      this.router.navigate([RouteName.Gallery]);
+      this.router.navigate(['/album', this.album?.id]);
     }
   }
 }

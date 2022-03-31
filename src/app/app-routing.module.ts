@@ -1,25 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from '@components/about/about.component';
-import { AlbumComponent } from '@components/album/album.component';
-import { ContactUsComponent } from '@components/contact-us/contact-us.component';
-import { GalleryComponent } from '@components/gallery/gallery.component';
-import { HomeComponent } from '@components/home/home.component';
+import { PageAboutComponent } from '@components/page-about/page-about.component';
+import { PageAlbumDetailsComponent } from '@components/page-album-details/page-album-details.component';
+import { PageAlbumComponent } from '@components/page-album/page-album.component';
+import { PageContactUsComponent } from '@components/page-contact-us/page-contact-us.component';
+import { PageGalleryComponent } from '@components/page-gallery/page-gallery.component';
+import { PageHomeComponent } from '@components/page-home/page-home.component';
 
 export enum RouteName {
   Home = 'home',
   Gallery = 'gallery',
   About = 'about',
   ContactUs = 'contact-us',
-  Album = 'album/:id'
+  Album = 'album/:id',
+  AlbumDetails = 'album-photos/:id'
 }
 const routes: Routes = [
-  { path: RouteName.Home, component: HomeComponent },
-  { path: RouteName.Gallery, component: GalleryComponent },
-  { path: RouteName.About, component: AboutComponent },
-  { path: RouteName.ContactUs, component: ContactUsComponent },
-  { path: RouteName.Album, component: AlbumComponent },
-  { path: '**', component: HomeComponent }
+  { path: RouteName.Home, component: PageHomeComponent },
+  { path: RouteName.Gallery, component: PageGalleryComponent },
+  { path: RouteName.About, component: PageAboutComponent },
+  { path: RouteName.ContactUs, component: PageContactUsComponent },
+  { path: RouteName.Album, component: PageAlbumComponent },
+  { path: RouteName.AlbumDetails, component: PageAlbumDetailsComponent },
+  { path: '**', component: PageHomeComponent }
 ];
 
 @NgModule({

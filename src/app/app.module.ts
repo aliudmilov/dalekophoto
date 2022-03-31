@@ -19,25 +19,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NavigationMenuComponent } from '@components/navigation-menu/navigation-menu.component';
-import { HomeComponent } from '@components/home/home.component';
-import { GalleryComponent } from '@components/gallery/gallery.component';
-import { AboutComponent } from '@components/about/about.component';
-import { ContactUsComponent } from '@components/contact-us/contact-us.component';
 import { AlbumComponent } from '@components/album/album.component';
 import { ScrollToTopComponent } from '@components/scroll-to-top/scroll-to-top.component';
 import { HeaderComponent } from '@components/header/header.component';
+import { PageHomeComponent } from './components/page-home/page-home.component';
+import { PageGalleryComponent } from './components/page-gallery/page-gallery.component';
+import { PageContactUsComponent } from './components/page-contact-us/page-contact-us.component';
+import { PageAboutComponent } from './components/page-about/page-about.component';
+import { PageAlbumComponent } from './components/page-album/page-album.component';
+import { PageAlbumDetailsComponent } from './components/page-album-details/page-album-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     NavigationMenuComponent,
-    GalleryComponent,
-    AboutComponent,
-    ContactUsComponent,
-    AlbumComponent,
-    HomeComponent,
     ScrollToTopComponent,
-    HeaderComponent
+    AlbumComponent,
+    PageHomeComponent,
+    PageGalleryComponent,
+    PageContactUsComponent,
+    PageAboutComponent,
+    PageAlbumComponent,
+    PageAlbumDetailsComponent
   ],
   imports: [
     BrowserModule,

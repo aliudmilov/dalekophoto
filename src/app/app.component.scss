@@ -2,15 +2,11 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   align-items: stretch;
-  row-gap: 8px;
-  padding: 8px;
   height: 100%;
 }
 
 .header {
   grid-row: 1;
-  padding-top: 6px;
-  padding-bottom: 4px;
 }
 
 .content {

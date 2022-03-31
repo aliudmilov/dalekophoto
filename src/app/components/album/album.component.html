@@ -1,19 +1,16 @@
 <div class="container">
-  <div class="close-button-container">
-    <button
-      class="close-button"
-      mat-icon-button
-      aria-label="Close"
-      (click)="onCloseClicked()"
-    >
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
-  <ngx-gallery
-    class="ngx-gallery content"
-    [options]="galleryOptions"
-    [images]="albumImages"
-    (change)="onChange($event)"
-  ></ngx-gallery>
-  <mat-spinner class="spinner" *ngIf="isBusy"></mat-spinner>
+  <ul class="mdc-image-list mdc-image-list--masonry album-image-list">
+    <li class="mdc-image-list__item" *ngFor="let photo of album?.photos">
+      <a
+        [routerLink]="['/album-photos', album?.id]"
+        [queryParams]="{ photoId: photo?.id }"
+      >
+        <img
+          class="mdc-image-list__image"
+          [lazyLoad]="photo.mediumImageUrl"
+          [defaultImage]="photo.mediumImageDefaultUrl"
+        />
+      </a>
+    </li>
+  </ul>
 </div>

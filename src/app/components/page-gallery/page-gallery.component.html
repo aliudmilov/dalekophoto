@@ -17,11 +17,7 @@
               class="mdc-image-list__item"
               *ngFor="let photo of getFeaturedPhotos(album); last as isLast"
             >
-              <a
-                class="photo-container"
-                [routerLink]="['/album', album?.id]"
-                [queryParams]="{ photoId: photo?.id }"
-              >
+              <a class="photo-container" [routerLink]="['/album', album?.id]">
                 <img
                   class="mdc-image-list__image photo"
                   [lazyLoad]="photo.smallImageUrl"

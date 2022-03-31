@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
-import { DestroyAwareComponent } from '@components/destroy-aware-component';
 import { takeUntil } from 'rxjs';
+import { DestroyAwareComponent } from '@components/destroy-aware-component';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +17,8 @@ export class HeaderComponent extends DestroyAwareComponent {
     router.events.pipe(takeUntil(this.destroyed$)).subscribe((x) => {
       if (x instanceof NavigationStart) {
         const event = x as NavigationStart;
-        this.hide = event.url.startsWith('/album');
+        console.log(event);
+        this.hide = event?.url?.startsWith('/album-photos');
       }
     });
   }

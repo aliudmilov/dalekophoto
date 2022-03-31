@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { takeUntil, throwError } from 'rxjs';
 import { DestroyAwareComponent } from '@components/destroy-aware-component';
 import { Album } from '@models/Album';
 import { Photo } from '@models/Photo';
 import { AlbumService } from '@services/album.service';
-import { takeUntil, throwError } from 'rxjs';
 
 @Component({
-  selector: 'app-gallery-home',
-  templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
+  selector: 'app-page-gallery',
+  templateUrl: './page-gallery.component.html',
+  styleUrls: ['./page-gallery.component.scss']
 })
-export class GalleryComponent extends DestroyAwareComponent implements OnInit {
+export class PageGalleryComponent
+  extends DestroyAwareComponent
+  implements OnInit
+{
   isBusy = true;
   albums?: Album[];
   photos = new Map<string, Photo[]>();
